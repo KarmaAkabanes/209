@@ -10,7 +10,6 @@ form.addEventListener('submit', (event) => {
 
     if (!postalCodeRegex.test(postalCode)) {
         errorMessage.textContent = 'Veuillez entrer un code postal valide (5 chiffres).';
-        errorMessage.classList.remove('hidden');
         return;
     }
 
@@ -29,6 +28,7 @@ form.addEventListener('submit', (event) => {
                     option.text = commune.nom;
                     communeSelect.add(option);
                 });
+                errorMessage.textContent = '';
             }
         })
 });
